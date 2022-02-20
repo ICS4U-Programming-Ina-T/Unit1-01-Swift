@@ -10,6 +10,12 @@
 //  gets input from the user and determines that max number of                               
 //  logs that can be carried on a 1100kg truck.
 
+// declaring constants
+let maxWeight = Double(1100)
+let sizePerOne = Double(20)
+let opOne = Double(1)
+let opTwo = Double(0.5)
+
 // blank line
 print("")
 
@@ -23,27 +29,27 @@ print("")
 
 // gets input from user
 print("Enter one of the above lengths: ", terminator: "")
-let lengthString = readLine()
+var lengthString = readLine()
 
 // converts string input to double
-let lengthDouble = Double(lengthString!) ?? 0
+var lengthDouble = Double(lengthString!) ?? 0
 
 // blank line
 print("")
 
 // determines amount of logs that can be carried
-if lengthDouble == 1 {
-    let truckSize = (1100 / 20)
+if lengthDouble == opOne {
+    let truckSize = (maxWeight / sizePerOne)
     // displays results
     print("The max amount of \(lengthDouble)m logs that")
     print("can be carried is \(truckSize)")
-} else if lengthDouble == 0.5 {
-    let truckSize = (1100 / 20) / 0.5
+} else if lengthDouble == opTwo {
+    let truckSize = (maxWeight / sizePerOne) / lengthDouble
     // displays results
     print("The max amount of \(lengthDouble)m logs that")
     print("can be carried is \(truckSize)")
 } else {
-    let truckSize = (1100 / 20) / 0.25
+    let truckSize = (maxWeight / sizePerOne) / lengthDouble
     // displays results
     print("The max amount of \(lengthDouble)m logs that")
     print("can be carried is \(truckSize)")
